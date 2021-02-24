@@ -9,6 +9,12 @@ test("Shouldn't allowed click button if isDisabled is present", () => {
   expect(container.querySelector("span.disabled")).toBeInTheDocument();
 });
 
+test("Should add btn-primary when isPrimary is present", () => {
+  const { container } = render(<Button isPrimary></Button>);
+
+  expect(container.querySelector("button.btn-primary")).toBeInTheDocument();
+});
+
 test("Should render loading/spinner", () => {
   const { container, getByText } = render(<Button isLoading></Button>);
 
